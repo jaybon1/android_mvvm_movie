@@ -2,8 +2,12 @@ package com.example.movie20210814.view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
+import androidx.databinding.BindingAdapter
 import androidx.databinding.ViewDataBinding
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.movie20210814.databinding.MainListViewBinding
 import com.example.movie20210814.model.MovieDTO
 
@@ -54,5 +58,16 @@ class MovieAdapter(
 
     companion object {
         private const val TAG = "MovieAdapter"
+
+        @BindingAdapter("app:setMovieRV")
+        @JvmStatic fun setMovieRV(
+            recyclerView: RecyclerView,
+            list: List<MovieDTO>
+        ){
+            recyclerView.apply {
+                adapter = MovieAdapter(recyclerView.context as MainActivity, list)
+                layoutManager = LinearLayoutManager(recyclerView.context)
+            }
+        }
     }
 }

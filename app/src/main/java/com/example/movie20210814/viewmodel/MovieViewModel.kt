@@ -25,7 +25,7 @@ class MovieViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun getUserData(){
-        userDataLive.value = "홍길동"
+        userDataLive.value = "영화리스트"
     }
 
     fun getList() {

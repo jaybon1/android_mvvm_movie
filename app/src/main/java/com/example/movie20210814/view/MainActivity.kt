@@ -14,7 +14,7 @@ import com.example.movie20210814.viewmodel.MovieViewModel
 class MainActivity : AppCompatActivity() {
 
     private lateinit var activityMainBinding: ActivityMainBinding
-    private lateinit var movieAdapter: MovieAdapter
+//    private lateinit var movieAdapter: MovieAdapter
     private lateinit var movieViewModel: MovieViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,12 +27,12 @@ class MainActivity : AppCompatActivity() {
         activityMainBinding.movieViewModel = movieViewModel
         activityMainBinding.lifecycleOwner = this
 
-        movieAdapter = MovieAdapter(this, listOf())
+//        movieAdapter = MovieAdapter(this, listOf())
 
-        activityMainBinding.rvMain.apply {
-            adapter = movieAdapter
-            layoutManager = LinearLayoutManager(this@MainActivity)
-        }
+//        activityMainBinding.rvMain.apply {
+//            adapter = movieAdapter
+//            layoutManager = LinearLayoutManager(this@MainActivity)
+//        }
 
     }
 
@@ -50,9 +50,9 @@ class MainActivity : AppCompatActivity() {
             ViewModelProvider.AndroidViewModelFactory.getInstance(application)
         ).get(MovieViewModel::class.java)
 
-        movieViewModel.bindMovieDTOListLive().observe(this, {
-            movieAdapter.changeMovieList(it)
-        })
+//        movieViewModel.bindMovieDTOListLive().observe(this, {
+//            movieAdapter.changeMovieList(it)
+//        })
 
     }
 
